@@ -22,3 +22,6 @@ autocmd FileType * RainbowParentheses
 
 " Startify Project Management
 source $HOME/.config/nvim/plug-config/start-screen.vim
+
+" Git integration
+source $HOME/.config/nvim/plug-config/signify.vim
