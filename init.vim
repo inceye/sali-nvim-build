@@ -25,3 +25,6 @@ source $HOME/.config/nvim/plug-config/start-screen.vim
 
 " Git integration
 source $HOME/.config/nvim/plug-config/signify.vim
+
+" Quickscope
+source $HOME/.config/nvim/plug-config/quickscope.vim
