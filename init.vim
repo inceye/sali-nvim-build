@@ -10,3 +10,12 @@ source $HOME/.config/nvim/keys/mappings.vim
 
 " Airline theme
 source $HOME/.config/nvim/themes/airline.vim
+
+" Color_vim + lua conf
+lua require'plug-colorizer'
+
+" Rainbow
+let g:rainbow#max_level = 16
+let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
+
+autocmd FileType * RainbowParentheses
