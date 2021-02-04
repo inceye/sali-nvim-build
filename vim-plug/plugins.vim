@@ -30,5 +30,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'junegunn/gv.vim'
     " Quickscope
     Plug 'unblevable/quick-scope'
+    " Stable version of coc
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()

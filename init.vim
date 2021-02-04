@@ -28,3 +28,6 @@ source $HOME/.config/nvim/plug-config/signify.vim
 
 " Quickscope
 source $HOME/.config/nvim/plug-config/quickscope.vim
+
+" COC config
+source $HOME/.config/nvim/plug-config/coc.vim
