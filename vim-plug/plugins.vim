@@ -31,7 +31,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Quickscope
     Plug 'unblevable/quick-scope'
     " Stable version of coc
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    " Plug 'neoclide/coc.nvim', {'branch': 'release'}
     " FAR
     Plug 'ChristianChiarulli/far.vim'
 
