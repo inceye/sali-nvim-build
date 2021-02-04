@@ -12,7 +12,10 @@ source $HOME/.config/nvim/keys/mappings.vim
 source $HOME/.config/nvim/themes/airline.vim
 
 " Color_vim + lua conf
-lua require'plug-colorizer'
+" lua require'plug-colorizer'
+
+" Beautiful colors in vim
+source $HOME/.config/nvim/themes/beautiful.vim
 
 " Rainbow
 let g:rainbow#max_level = 16
