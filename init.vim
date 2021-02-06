@@ -1,4 +1,3 @@
-
 " the vim-autoload/install plugin
 source $HOME/.config/nvim/vim-plug/plugins.vim
 
@@ -17,12 +16,6 @@ source $HOME/.config/nvim/themes/airline.vim
 " Beautiful colors in vim
 source $HOME/.config/nvim/themes/beautiful.vim
 
-" Rainbow
-let g:rainbow#max_level = 16
-let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
-
-autocmd FileType * RainbowParentheses
-
 " Startify Project Management
 source $HOME/.config/nvim/plug-config/start-screen.vim
 
@@ -32,5 +25,5 @@ source $HOME/.config/nvim/plug-config/signify.vim
 " Quickscope
 source $HOME/.config/nvim/plug-config/quickscope.vim
 
-" COC config
-" source $HOME/.config/nvim/plug-config/coc.vim
+" FAR
+source $HOME/.config/nvim/plug-config/far.vim

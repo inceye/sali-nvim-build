@@ -12,15 +12,11 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'sheerun/vim-polyglot'
     " File Explorer
     Plug 'scrooloose/NERDTree'
-    " Auto pairs for '(' '[' '{'
-    Plug 'jiangmiao/auto-pairs'
     " Airline theme
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     " Add color to vim (show hex)
     Plug 'norcalli/nvim-colorizer.lua'
-    " Rinbow
-    Plug 'junegunn/rainbow_parentheses.vim'
     " Startify project manager
     Plug 'mhinz/vim-startify'
     " Git integration
@@ -30,8 +26,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'junegunn/gv.vim'
     " Quickscope
     Plug 'unblevable/quick-scope'
-    " Stable version of coc
-    " Plug 'neoclide/coc.nvim', {'branch': 'release'}
     " FAR
     Plug 'ChristianChiarulli/far.vim'
 
