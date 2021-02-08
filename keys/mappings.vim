@@ -42,3 +42,17 @@ nnoremap <C-l> <C-w>l
 
 nnoremap <Leader>o o<Esc>^Da
 nnoremap <Leader>O O<Esc>^Da
+
+" Spell-check set to <leader>o, 'o' for 'orthography':
+	map <leader>o :setlocal spell! spelllang=en_us<CR>
+
+" Check file in shellcheck:
+	map <leader>s :!clear && shellcheck %<CR>
+
+" Open my bibliography file in split
+	map <leader>b :vsp<space>$BIB<CR>
+	map <leader>r :vsp<space>$REFER<CR>
+
+" Replace all is aliased to S.
+	nnoremap S :%s//g<Left><Left>
+
