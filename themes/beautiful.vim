@@ -63,7 +63,7 @@ SynColor Todo		term=standout cterm=NONE ctermfg=Black ctermbg=Yellow gui=NONE gu
 SynLink String		Constant
 SynLink Character	Constant
 SynLink Number		Constant
-SynLink Boolean		Consant
+SynLink Boolean		Constant
 SynLink Float		Number
 SynLink Function	Identifier
 SynLink Conditional	Statement
