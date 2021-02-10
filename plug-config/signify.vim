@@ -17,8 +17,8 @@ nmap <leader>gK 9999<leader>gk
 
 
 " If you like colors instead
-" highlight SignifySignAdd                  ctermbg=green                guibg=#00ff00
-" highlight SignifySignDelete ctermfg=black ctermbg=red    guifg=#ffffff guibg=#ff0000
-" highlight SignifySignChange ctermfg=black ctermbg=yellow guifg=#000000 guibg=#ffff00
+highlight SignifySignAdd    ctermfg=green ctermbg=NONE
+highlight SignifySignDelete ctermfg=red   ctermbg=NONE
+highlight SignifySignChange ctermfg=yellow ctermbg=NONE
 highlight SignColumn ctermbg=NONE cterm=NONE guibg=NONE gui=NONE
 
