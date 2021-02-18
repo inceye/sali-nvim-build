@@ -1,0 +1,39 @@
+#!/bin/bash
+path_initial=$(pwd)
+
+finish() {
+	log "Exiting"
+	cd "$path_initial" || exit
+	rm -Rf tmp
+}
+
+# logging fn
+log() {
+	local color_on=$'\e[0;32m'
+	local color_off=$'\e[0m'
+	echo "${color_on}[$(date)]${color_off} $*" >&2
+}
+
+# error fn
+fatal() {
+	local color_fatal=$'\033[0;31m'
+	log "${color_fatal} $* Failed!"
+	log "${color_fatal}	Error!"
+	finish
+	exit 1
+}
+
+
+sudo pacman -S neovim || 
+	fatal "Installing packages"
+
+( cd fonts && ./install.sh ) ||
+	fatal "Installing powerline fonts"
+
+
+rm -Rf ~/.config/nvim || fatal "Getting rid of old configuration"
+mkdir --parents ~/.config/nvim || fatal "Creation of .config/nvim directory"
+cp -r config/. ~/.config/nvim/ || fatal "Copying new configs"
+
+echo "Script successfully finished"
+finish

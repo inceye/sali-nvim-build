@@ -1,33 +1,29 @@
 A full build of neovim with custom colorschemes and several plugins
 ===
 
-To use this build of neovim, just clone it into your .config directory
+To install this build of neovim, clone this repository on your local machine and in the repository root run ./deploy
 
 ```
-git clone https://github.com/inceye/nvim-build ~/.config/nvim
+git clone https://github.com/inceye/nvim-build
+cd nvim-build
+./deploy
 ```
+
+Plugins will be installed automatically on the first use of neovim.
 
 ---
 
 This is our build of [neovim](https://github.com/neovim/neovim) -- a modern replacement for [vim](https://www.vim.org/) -- the improved terminal text editor.
 
-You can install neovim by installing our build of Arch linux, or by running
+To install it just use our deploy script, or install it manually. In Arch linux it is done by using pacman
 
-```
-sudo pacman -S neovim
-```
-
-in an existing installation of Arch linux. Then, just run
-
-```
-nvim
-```
-
-to start it.
+`
+pacman -S neovim
+`
 
 ---
 
-This configuration of neovim uses several plugins, which will be installed automatically on the first start of neovim. 
+This configuration of neovim uses several plugins, which will be installed automatically on the first start of neovim. Also this build requires a set of fonts to be installed, which is done while running the deploy script.
 
 The list of plugins used in this configuration:
 
