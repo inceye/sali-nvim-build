@@ -28,6 +28,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'mhinz/vim-signify'
     Plug 'tpope/vim-fugitive'
     Plug 'tpope/vim-rhubarb'
+    Plug 'tpope/vim-surround'
     Plug 'junegunn/gv.vim'
     " Quickscope
     Plug 'unblevable/quick-scope'
