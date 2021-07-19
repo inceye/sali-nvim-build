@@ -11,7 +11,7 @@ finish() {
 log() {
 	local color_on=$'\e[0;32m'
 	local color_off=$'\e[0m'
-	echo "${color_on}[$(date)]${color_off} $*" >&2
+	echo "${color_on}[$(date '+%Y-%m-%d %H:%M:%S %:z')]${color_off} $*" >&2
 }
 
 # error fn
@@ -24,16 +24,19 @@ fatal() {
 }
 
 
+log "Installing neovim"
 sudo pacman -S neovim || 
 	fatal "Installing packages"
 
+log "Installing fonts"
 ( cd fonts && ./install.sh ) ||
 	fatal "Installing powerline fonts"
 
-
+log "Getting rid of old configuration"
 rm -Rf ~/.config/nvim || fatal "Getting rid of old configuration"
+log "Copying new configuration"
 mkdir --parents ~/.config/nvim || fatal "Creation of .config/nvim directory"
 cp -r config/. ~/.config/nvim/ || fatal "Copying new configs"
 
-echo "Script successfully finished"
+log "Script successfully finished"
 finish
