@@ -7,8 +7,7 @@ set hidden                              " Required to keep multiple buffers open
 set encoding=utf-8                      " The encoding displayed
 set pumheight=10                        " Makes pop-up menu smaller
 set fileencoding=utf-8                  " The encoding written to file
-set ruler              			        " Show the cursor position all the time
-set cmdheight=2                         " More space for displaying messages
+set ruler              			        " Show the cursor position all the time set cmdheight=2                         " More space for displaying messages
 set iskeyword+=-                      	" treat dash separated words as a word text object"
 set mouse=a                             " Enable your mouse
 set guicursor=                          " Set cursor shape to rectangle
@@ -41,6 +40,8 @@ au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm al
 
 autocmd BufRead *.rs :setlocal tags=./rusty-tags.vi;/,$RUST_SRC_PATH/rusty-tags.vi
 autocmd BufWritePost *.rs :silent! exec "!rusty-tags vi --quiet --start-dir=" . expand('%:p:h') . "&" | redraw!
+
+autocmd BufWritePost *.c,*.h silent! !ctags -R &
 
 " You can't stop me
 cmap w!! w !sudo tee %
