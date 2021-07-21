@@ -24,9 +24,13 @@ fatal() {
 }
 
 
-log "Installing neovim"
-sudo pacman -S neovim || 
+log "Installing neovim and it's dependencies"
+sudo pacman -S neovim python python-pip || 
 	fatal "Installing packages"
+
+log "Istalling python dependencies"
+pip install neovim ||
+    fatal "Installing python dependencies"
 
 log "Installing fonts"
 ( cd fonts && ./install.sh ) ||

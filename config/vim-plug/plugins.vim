@@ -34,5 +34,12 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'unblevable/quick-scope'
     " FAR
     Plug 'ChristianChiarulli/far.vim'
+    " Snippets
+    Plug 'tkhren/vim-fake'
+    Plug 'Shougo/deoplete.nvim'
+    Plug 'roxma/nvim-yarp'
+    Plug 'roxma/vim-hug-neovim-rpc'
+    Plug 'Shougo/neosnippet.vim'
+    Plug 'Shougo/neosnippet-snippets'
 
 call plug#end()

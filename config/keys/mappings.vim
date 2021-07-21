@@ -30,6 +30,7 @@ nnoremap <C-c> <Esc>
 inoremap <C-c> <Esc>
 vnoremap <C-c> <Esc>
 onoremap <C-c> <Esc>
+cnoremap <C-c> <Esc>
 " <TAB>: completion.
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 
@@ -58,3 +59,7 @@ nnoremap <C-l> <C-w>l
 
 " Replace all is aliased to S.
 	nnoremap S :%s//g<Left><Left>
+
+" Replace all FAKE__tag__ with fake#gen({tag})
+    map <leader>f :FakeSubstitute<CR>
+
