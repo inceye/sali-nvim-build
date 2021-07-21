@@ -25,8 +25,15 @@ fatal() {
 
 
 log "Installing neovim and it's dependencies"
-sudo pacman -S neovim python python-pip || 
+sudo pacman -S neovim python python-pip ctags || 
 	fatal "Installing packages"
+
+log "Installing some AUR dependencies"
+paru -S rusty-tags || 
+    pacaur -S rusty-tags || 
+    yaourt -S rusty-tags || 
+    sudo cargo install --root / rusty-tags || 
+    fatal "Installing additional AUR packages"
 
 log "Istalling python dependencies"
 pip install neovim ||
