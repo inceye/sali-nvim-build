@@ -43,5 +43,9 @@ autocmd BufWritePost *.rs :silent! exec "!rusty-tags vi --quiet --start-dir=" . 
 
 autocmd BufWritePost *.c,*.h silent! !ctags -R &
 
+" Omnicomplete
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
+
 " You can't stop me
 cmap w!! w !sudo tee %
