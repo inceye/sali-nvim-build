@@ -15,25 +15,33 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
     " Better Syntax Support
     Plug 'sheerun/vim-polyglot'
+
     " File Explorer
     Plug 'scrooloose/NERDTree'
+
     " Airline theme
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
+
     " Add color to vim (show hex)
     Plug 'norcalli/nvim-colorizer.lua'
+
     " Startify project manager
     Plug 'mhinz/vim-startify'
+
     " Git integration
     Plug 'mhinz/vim-signify'
     Plug 'tpope/vim-fugitive'
     Plug 'tpope/vim-rhubarb'
     Plug 'tpope/vim-surround'
     Plug 'junegunn/gv.vim'
+
     " Quickscope
     Plug 'unblevable/quick-scope'
+    
     " FAR
     Plug 'ChristianChiarulli/far.vim'
+
     " Snippets
     Plug 'tkhren/vim-fake'
     "Plug 'Shougo/deoplete.nvim'
@@ -41,5 +49,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     "Plug 'roxma/vim-hug-neovim-rpc'
     "Plug 'Shougo/neosnippet.vim'
     "Plug 'Shougo/neosnippet-snippets'
+    
+    " Syntax highlighting for different languages
+    Plug 'rust-lang/rust.vim'
+    Plug 'benknoble/vim-mips'
 
 call plug#end()
