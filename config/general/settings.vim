@@ -41,7 +41,7 @@ au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm al
 autocmd BufRead *.rs :setlocal tags=./rusty-tags.vi;/,$RUST_SRC_PATH/rusty-tags.vi
 autocmd BufWritePost *.rs :silent! exec "!rusty-tags vi --quiet --start-dir=" . expand('%:p:h') . "&" | redraw!
 
-autocmd BufWritePost *.c,*.h silent! !ctags -R . /usr/include &
+autocmd BufWritePost *.c,*.h :silent! !eval "ctags -R . /usr/include; sort -t$'\t' ./tags -o ./tags" & 
 
 " Omnicomplete
 filetype plugin on
