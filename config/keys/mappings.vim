@@ -37,6 +37,8 @@ cnoremap <C-c> <Esc>
 
 " <TAB>: completion.
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+" Enter selects menu item instead of inserting a caret return
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 " Better tabbing
 vnoremap < <gv
