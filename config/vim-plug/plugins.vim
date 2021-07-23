@@ -52,6 +52,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     "Plug 'roxma/vim-hug-neovim-rpc'
     "Plug 'Shougo/neosnippet.vim'
     "Plug 'Shougo/neosnippet-snippets'
+    "Plug 'maxboisvert/vim-simple-complete'
     
     " Syntax highlighting for different languages
     Plug 'rust-lang/rust.vim'

@@ -6,16 +6,16 @@ set hidden                              " Required to keep multiple buffers open
 "set nowrap                             " Display long lines as just one line (is incredibly annoying and just bad)
 set encoding=utf-8                      " The encoding displayed
 set pumheight=10                        " Makes pop-up menu smaller 
-set fileencoding=utf-8                  " The encoding written to file
+set fileencoding=utf-8                  " The encoding written to file 
 set ruler              			        " Show the cursor position all the time 
 set cmdheight=2                         " More space for displaying messages
 set iskeyword+=-                      	" treat dash separated words as a word text object"
 set mouse=a                             " Enable your mouse
 set guicursor=                          " Set cursor shape to rectangle 
 let g:airline_powerline_fonts = 1       " Enable airline arrow thingies
-set nofoldenable                        " Disable folding as it is annoying set splitbelow                          
-" Horizontal splits will automatically be below set splitright                          
-" Vertical splits will automatically be to the right 
+set nofoldenable                        " Disable folding as it is annoying 
+set splitbelow                          " Horizontal splits will automatically be below 
+set splitright                          " Vertical splits will automatically be to the right 
 set t_Co=256                            " Support 256 colors
 set conceallevel=0                      " So that I can see `` in markdown files
 set tabstop=4                           " Insert 2 spaces for a tab
@@ -37,7 +37,9 @@ set clipboard=unnamedplus               " Copy paste between vim and everything 
 "set autochdir                          " Your working directory will always be the same as your working directory
 set path+=**                            " Path hack that adds all files from all sub-directories to your path
 set complete+=kspell                    " Add spelling auto-completion
-set completeopt+=menuone,noinsert,noselect
+set completeopt+=menu
+set completeopt+=menuone
+set completeopt+=noselect
 let g:autocompletion = v:false
 let g:autocomplete_type = "buffer"
 
@@ -54,15 +56,21 @@ set omnifunc=syntaxcomplete#Complete
 
 function! OpenCompletion()
     if pumvisible() && (g:autocompletion == v:true)
-        call feedkeys("\<C-e>", "n")
-        redraw
-    endif
-    if !pumvisible() && ((v:char >= 'a' && v:char <= 'z') || (v:char >= 'A' && v:char <= 'Z')) && (g:autocompletion == v:true)
         if g:autocomplete_type == "buffer"
-            call feedkeys("\<C-n>", "n")
+            call feedkeys("\<C-e>\<C-n>", "i")
         endif
         if g:autocomplete_type == "omni"
-            call feedkeys("\<C-x>\<C-o>", "n")
+            call feedkeys("\<C-e>\<C-x>\<C-o>", "i")
+        endif
+        return
+        redraw
+    endif
+    if ((v:char >= 'a' && v:char <= 'z') || (v:char >= 'A' && v:char <= 'Z')) && (g:autocompletion == v:true)
+        if g:autocomplete_type == "buffer"
+            call feedkeys("\<C-n>", "i")
+        endif
+        if g:autocomplete_type == "omni"
+            call feedkeys("\<C-x>\<C-o>", "i")
         endif
         redraw
     endif
@@ -92,7 +100,7 @@ function! ToggleCompleteType()
     let g:autocomplete_type = "buffer"
 endfunction
 
-autocmd InsertCharPre * call OpenCompletion()
+autocmd InsertCharPre * noautocmd call OpenCompletion()
 
 " You can't stop me
 cmap w!! w !sudo tee %
