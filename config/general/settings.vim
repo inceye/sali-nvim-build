@@ -11,8 +11,7 @@ set ruler              			        " Show the cursor position all the time
 set cmdheight=2                         " More space for displaying messages
 set iskeyword+=-                      	" treat dash separated words as a word text object"
 set mouse=a                             " Enable your mouse
-set guicursor=                          " Set cursor shape to rectangle
-let g:airline_powerline_fonts = 1       " Enable airline arrow thingies
+set guicursor=                          " Set cursor shape to rectangle let g:airline_powerline_fonts = 1       " Enable airline arrow thingies
 set nofoldenable                        " Disable folding as it is annoying
 set splitbelow                          " Horizontal splits will automatically be below
 set splitright                          " Vertical splits will automatically be to the right
@@ -68,18 +67,22 @@ endfunction
 
 function! ToggleAutocomplete()
     if g:autocompletion == v:true 
+        echom "Auto-completion disabled"
         let g:autocompletion = v:false
     else
+        echom "Auto-completion enabled"
         let g:autocompletion = v:true
     endif
 endfunction
 
 function! ToggleCompleteType()
     if g:autocomplete_type == "buffer" 
+        echom "Auto-completion type set to omnicomplete"
         let g:autocomplete_type = "omni"
         return
     endif
     if g:autocomplete_type == "omni" 
+        echom "Auto-completion type set to normal"
         let g:autocomplete_type = "buffer"
         return
     endif
