@@ -36,6 +36,9 @@ set clipboard=unnamedplus               " Copy paste between vim and everything 
 "set autochdir                          " Your working directory will always be the same as your working directory
 set path+=**                            " Path hack that adds all files from all subdirectories to your path
 set complete+=kspell                    " Add spelling autocompletion
+set completeopt+=menuone,noinsert,noselect
+let g:autocompletion = v:true
+let g:autocomplete_type = "buffer"
 
 au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm alternatively you can run :source $MYVIMRC
 
@@ -47,6 +50,39 @@ autocmd BufWritePost *.c,*.h :silent! !eval "ctags -R . /usr/include; sort -t$'\
 " Omnicomplete
 filetype plugin on
 set omnifunc=syntaxcomplete#Complete
+
+function! OpenCompletion()
+    if !pumvisible() && ((v:char >= 'a' && v:char <= 'z') || (v:char >= 'A' && v:char <= 'Z')) && (g:autocompletion == v:true)
+        if g:autocomplete_type == "buffer"
+            call feedkeys("\<C-n>", "n")
+        endif
+        if g:autocomplete_type == "omni"
+            call feedkeys("\<C-x>\<C-o>", "n")
+        endif
+    endif
+endfunction
+
+function! ToggleAutocomplete()
+    if g:autocompletion == v:true 
+        let g:autocompletion = v:false
+    else
+        let g:autocompletion = v:true
+    endif
+endfunction
+
+function! ToggleCompleteType()
+    if g:autocomplete_type == "buffer" 
+        let g:autocomplete_type = "omni"
+        return
+    endif
+    if g:autocomplete_type == "omni" 
+        let g:autocomplete_type = "buffer"
+        return
+    endif
+    let g:autocomplete_type = "buffer"
+endfunction
+
+autocmd InsertCharPre * call OpenCompletion()
 
 " You can't stop me
 cmap w!! w !sudo tee %

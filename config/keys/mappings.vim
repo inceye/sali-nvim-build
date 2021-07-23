@@ -68,6 +68,9 @@ map <leader>s :!clear && shellcheck %<CR>
 map <leader>b :vsp<space>$BIB<CR>
 map <leader>r :vsp<space>$REFER<CR>
 
+map <expr> <leader>a ToggleAutocomplete()
+map <expr> <leader>c ToggleCompleteType()
+
 " Replace all is aliased to S.
 nnoremap S :%s//g<Left><Left>
 
