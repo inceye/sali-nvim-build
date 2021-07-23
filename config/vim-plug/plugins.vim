@@ -44,6 +44,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
     " Snippets
     Plug 'tkhren/vim-fake'
+    "Plug 'hrsh7th/nvim-compe'
+    "Plug 'hrsh7th/vim-vsnip'
+    "Plug 'hrsh7th/vim-vsnip-integ'
     "Plug 'Shougo/deoplete.nvim'
     "Plug 'roxma/nvim-yarp'
     "Plug 'roxma/vim-hug-neovim-rpc'

@@ -31,8 +31,8 @@ source $HOME/.config/nvim/plug-config/far.vim
 " Neosnippet
 " source $HOME/.config/nvim/plug-config/neosnippet.vim
 
-" Deoplete (neosnippet dependency)
-" source $HOME/.config/nvim/plug-config/deoplete.vim
+" Autocomplete
+"source $HOME/.config/nvim/plug-config/compe.vim
 
 " Fake (generate gibberish)
 source $HOME/.config/nvim/plug-config/fake.vim
