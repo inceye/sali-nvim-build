@@ -5,16 +5,17 @@ syntax enable                           " Enables syntax highlighting
 set hidden                              " Required to keep multiple buffers open multiple buffers
 "set nowrap                             " Display long lines as just one line (is incredibly annoying and just bad)
 set encoding=utf-8                      " The encoding displayed
-set pumheight=10                        " Makes pop-up menu smaller
+set pumheight=10                        " Makes pop-up menu smaller 
 set fileencoding=utf-8                  " The encoding written to file
 set ruler              			        " Show the cursor position all the time 
 set cmdheight=2                         " More space for displaying messages
 set iskeyword+=-                      	" treat dash separated words as a word text object"
 set mouse=a                             " Enable your mouse
-set guicursor=                          " Set cursor shape to rectangle let g:airline_powerline_fonts = 1       " Enable airline arrow thingies
-set nofoldenable                        " Disable folding as it is annoying
-set splitbelow                          " Horizontal splits will automatically be below
-set splitright                          " Vertical splits will automatically be to the right
+set guicursor=                          " Set cursor shape to rectangle 
+let g:airline_powerline_fonts = 1       " Enable airline arrow thingies
+set nofoldenable                        " Disable folding as it is annoying set splitbelow                          
+" Horizontal splits will automatically be below set splitright                          
+" Vertical splits will automatically be to the right 
 set t_Co=256                            " Support 256 colors
 set conceallevel=0                      " So that I can see `` in markdown files
 set tabstop=4                           " Insert 2 spaces for a tab
@@ -37,7 +38,7 @@ set clipboard=unnamedplus               " Copy paste between vim and everything 
 set path+=**                            " Path hack that adds all files from all sub-directories to your path
 set complete+=kspell                    " Add spelling auto-completion
 set completeopt+=menuone,noinsert,noselect
-let g:autocompletion = v:true
+let g:autocompletion = v:false
 let g:autocomplete_type = "buffer"
 
 au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm alternatively you can run :source $MYVIMRC
@@ -52,16 +53,18 @@ filetype plugin on
 set omnifunc=syntaxcomplete#Complete
 
 function! OpenCompletion()
-    if pumvisible()
-        call feedkeys("\<C-x>") "close pop-up menu if it's open as otherwise the options would not update after you type
+    if pumvisible() && (g:autocompletion == v:true)
+        call feedkeys("\<C-e>", "n")
+        redraw
     endif
-    if ((v:char >= 'a' && v:char <= 'z') || (v:char >= 'A' && v:char <= 'Z')) && (g:autocompletion == v:true)
+    if !pumvisible() && ((v:char >= 'a' && v:char <= 'z') || (v:char >= 'A' && v:char <= 'Z')) && (g:autocompletion == v:true)
         if g:autocomplete_type == "buffer"
             call feedkeys("\<C-n>", "n")
         endif
         if g:autocomplete_type == "omni"
             call feedkeys("\<C-x>\<C-o>", "n")
         endif
+        redraw
     endif
 endfunction
 
