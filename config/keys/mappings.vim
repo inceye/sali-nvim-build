@@ -35,10 +35,12 @@ onoremap <C-c> <Esc>
 vnoremap <C-c> <Esc>
 cnoremap <C-c> <Esc>
 
+" These options are not very good with as-you-type auto-completion, so I've
+" removed them, They kinda mess up the default vim behavior
 " <TAB>: completion.
-inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+"inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 " Enter selects menu item instead of inserting a caret return
-inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+"inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 " Better tabbing
 vnoremap < <gv

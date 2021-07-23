@@ -7,7 +7,8 @@ set hidden                              " Required to keep multiple buffers open
 set encoding=utf-8                      " The encoding displayed
 set pumheight=10                        " Makes pop-up menu smaller
 set fileencoding=utf-8                  " The encoding written to file
-set ruler              			        " Show the cursor position all the time set cmdheight=2                         " More space for displaying messages
+set ruler              			        " Show the cursor position all the time 
+set cmdheight=2                         " More space for displaying messages
 set iskeyword+=-                      	" treat dash separated words as a word text object"
 set mouse=a                             " Enable your mouse
 set guicursor=                          " Set cursor shape to rectangle
@@ -34,8 +35,8 @@ set timeoutlen=500                      " By default timeoutlen is 1000 ms  XXX:
 set formatoptions-=cro                  " Stop newline continution of comments
 set clipboard=unnamedplus               " Copy paste between vim and everything else
 "set autochdir                          " Your working directory will always be the same as your working directory
-set path+=**                            " Path hack that adds all files from all subdirectories to your path
-set complete+=kspell                    " Add spelling autocompletion
+set path+=**                            " Path hack that adds all files from all sub-directories to your path
+set complete+=kspell                    " Add spelling auto-completion
 set completeopt+=menuone,noinsert,noselect
 let g:autocompletion = v:true
 let g:autocomplete_type = "buffer"
@@ -52,7 +53,10 @@ filetype plugin on
 set omnifunc=syntaxcomplete#Complete
 
 function! OpenCompletion()
-    if !pumvisible() && ((v:char >= 'a' && v:char <= 'z') || (v:char >= 'A' && v:char <= 'Z')) && (g:autocompletion == v:true)
+    if pumvisible()
+        call feedkeys("\<C-x>") "close pop-up menu if it's open as otherwise the options would not update after you type
+    endif
+    if ((v:char >= 'a' && v:char <= 'z') || (v:char >= 'A' && v:char <= 'Z')) && (g:autocompletion == v:true)
         if g:autocomplete_type == "buffer"
             call feedkeys("\<C-n>", "n")
         endif
