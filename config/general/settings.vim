@@ -40,6 +40,7 @@ set complete+=kspell                    " Add spelling auto-completion
 set completeopt+=menu
 set completeopt+=menuone
 set completeopt+=noselect
+set completeopt+=noinsert
 let g:autocompletion = v:false
 let g:autocomplete_type = "buffer"
 
