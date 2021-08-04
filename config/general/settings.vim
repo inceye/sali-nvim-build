@@ -5,17 +5,17 @@ syntax enable                           " Enables syntax highlighting
 set hidden                              " Required to keep multiple buffers open multiple buffers
 "set nowrap                             " Display long lines as just one line (is incredibly annoying and just bad)
 set encoding=utf-8                      " The encoding displayed
-set pumheight=10                        " Makes pop-up menu smaller 
-set fileencoding=utf-8                  " The encoding written to file 
-set ruler                               " Show the cursor position all the time 
+set pumheight=10                        " Makes pop-up menu smaller
+set fileencoding=utf-8                  " The encoding written to file
+set ruler                               " Show the cursor position all the time
 set cmdheight=2                         " More space for displaying messages
 set iskeyword+=-                        " treat dash separated words as a word text object"
 set mouse=a                             " Enable your mouse
-set guicursor=                          " Set cursor shape to rectangle 
+set guicursor=                          " Set cursor shape to rectangle
 let g:airline_powerline_fonts = 1       " Enable airline arrow thingies
-set nofoldenable                        " Disable folding as it is annoying 
-set splitbelow                          " Horizontal splits will automatically be below 
-set splitright                          " Vertical splits will automatically be to the right 
+set nofoldenable                        " Disable folding as it is annoying
+set splitbelow                          " Horizontal splits will automatically be below
+set splitright                          " Vertical splits will automatically be to the right
 set t_Co=256                            " Support 256 colors
 set conceallevel=0                      " So that I can see `` in markdown files
 set tabstop=4                           " Insert 2 spaces for a tab
@@ -29,7 +29,7 @@ set number                              " Line numbers
 set background=dark                     " tell vim what the background color looks like
 set showtabline=2                       " Always show tabs
 set list!
-set listchars=tab:>-,trail:.,extends:>,precedes:<,nbsp:.,lead:.,eol:$
+set listchars=tab:>-,trail:.,extends:>,precedes:<,nbsp:.,lead:.
 set nobackup                            " This is recommended by coc        XXX: proposed removal
 set nowritebackup                       " This is recommended by coc        XXX: proposed removal
 set updatetime=300                      " Faster completion                 XXX: proposed removal
