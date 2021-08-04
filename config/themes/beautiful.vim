@@ -33,30 +33,34 @@ let g:colors_name = "beautiful"
 " Careful with "cterm=bold", it changes the color to bright for some terminals.
 " There are two sets of defaults: for a dark and a light background.
 if &background == "dark"
-  SynColor Comment	term=bold cterm=NONE ctermfg=Cyan ctermbg=NONE gui=NONE guifg=#80a0ff guibg=NONE
-  SynColor Constant	term=underline cterm=NONE ctermfg=Magenta ctermbg=NONE gui=NONE guifg=#ffa0a0 guibg=NONE
-  SynColor Special	term=bold cterm=NONE ctermfg=LightMagenta ctermbg=NONE gui=NONE guifg=Orange guibg=NONE
+  SynColor Comment		term=bold cterm=NONE ctermfg=Cyan ctermbg=NONE gui=NONE guifg=#80a0ff guibg=NONE
+  SynColor Constant		term=underline cterm=NONE ctermfg=Magenta ctermbg=NONE gui=NONE guifg=#ffa0a0 guibg=NONE
+  SynColor Special		term=bold cterm=NONE ctermfg=LightMagenta ctermbg=NONE gui=NONE guifg=Orange guibg=NONE
   SynColor Identifier	term=underline cterm=bold ctermfg=Cyan ctermbg=NONE gui=NONE guifg=#40ffff guibg=NONE
   SynColor Statement	term=bold cterm=NONE ctermfg=Yellow ctermbg=NONE gui=bold guifg=#ffff60 guibg=NONE
-  SynColor PreProc	term=underline cterm=NONE ctermfg=Blue ctermbg=NONE gui=NONE guifg=#ff80ff guibg=NONE
-  SynColor Type		term=underline cterm=NONE ctermfg=Green ctermbg=NONE gui=bold guifg=#60ff60 guibg=NONE
+  SynColor PreProc		term=underline cterm=NONE ctermfg=Blue ctermbg=NONE gui=NONE guifg=#ff80ff guibg=NONE
+  SynColor Type			term=underline cterm=NONE ctermfg=Green ctermbg=NONE gui=bold guifg=#60ff60 guibg=NONE
   SynColor Underlined	term=underline cterm=underline ctermfg=LightBlue gui=underline guifg=#80a0ff
-  SynColor Ignore	term=NONE cterm=NONE ctermfg=black ctermbg=NONE gui=NONE guifg=bg guibg=NONE
+  SynColor Ignore		term=NONE cterm=NONE ctermfg=black ctermbg=NONE gui=NONE guifg=bg guibg=NONE
+  SynColor Whitespace	term=NONE cterm=NONE ctermfg=DarkBlue ctermbg=NONE gui=NONE guifg=#151540 guibg=NONE
+  SynColor NonText		term=NONE cterm=NONE ctermfg=DarkBlue ctermbg=NONE gui=NONE guifg=#151540 guibg=NONE
 else
-  SynColor Comment	term=bold cterm=NONE ctermfg=DarkBlue ctermbg=NONE gui=NONE guifg=Blue guibg=NONE
-  SynColor Constant	term=underline cterm=NONE ctermfg=DarkRed ctermbg=NONE gui=NONE guifg=Magenta guibg=NONE
+  SynColor Comment		term=bold cterm=NONE ctermfg=DarkBlue ctermbg=NONE gui=NONE guifg=Blue guibg=NONE
+  SynColor Constant		term=underline cterm=NONE ctermfg=DarkRed ctermbg=NONE gui=NONE guifg=Magenta guibg=NONE
   " #6a5acd is SlateBlue
-  SynColor Special	term=bold cterm=NONE ctermfg=DarkMagenta ctermbg=NONE gui=NONE guifg=#6a5acd guibg=NONE
+  SynColor Special		term=bold cterm=NONE ctermfg=DarkMagenta ctermbg=NONE gui=NONE guifg=#6a5acd guibg=NONE
   SynColor Identifier	term=underline cterm=NONE ctermfg=DarkCyan ctermbg=NONE gui=NONE guifg=DarkCyan guibg=NONE
   SynColor Statement	term=bold cterm=NONE ctermfg=Brown ctermbg=NONE gui=bold guifg=Brown guibg=NONE
   " #6a0dad is Purple
-  SynColor PreProc	term=underline cterm=NONE ctermfg=DarkMagenta ctermbg=NONE gui=NONE guifg=#6a0dad guibg=NONE
-  SynColor Type		term=underline cterm=NONE ctermfg=DarkGreen ctermbg=NONE gui=bold guifg=SeaGreen guibg=NONE
+  SynColor PreProc		term=underline cterm=NONE ctermfg=DarkMagenta ctermbg=NONE gui=NONE guifg=#6a0dad guibg=NONE
+  SynColor Type			term=underline cterm=NONE ctermfg=DarkGreen ctermbg=NONE gui=bold guifg=SeaGreen guibg=NONE
   SynColor Underlined	term=underline cterm=underline ctermfg=DarkMagenta gui=underline guifg=SlateBlue
-  SynColor Ignore	term=NONE cterm=NONE ctermfg=white ctermbg=NONE gui=NONE guifg=bg guibg=NONE
+  SynColor Ignore		term=NONE cterm=NONE ctermfg=white ctermbg=NONE gui=NONE guifg=bg guibg=NONE
+  SynColor Whitespace	term=NONE cterm=NONE ctermfg=LightBlue ctermbg=NONE gui=NONE guifg=#80a0ff guibg=NONE
+  SynColor NonText		term=NONE cterm=NONE ctermfg=LightBlue ctermbg=NONE gui=NONE guifg=#80a0ff guibg=NONE
 endif
-SynColor Error		term=reverse cterm=NONE ctermfg=White ctermbg=Red gui=NONE guifg=White guibg=Red
-SynColor Todo		term=standout cterm=NONE ctermfg=Black ctermbg=Yellow gui=NONE guifg=Blue guibg=Yellow
+SynColor Error			term=reverse cterm=NONE ctermfg=White ctermbg=Red gui=NONE guifg=White guibg=Red
+SynColor Todo			term=standout cterm=NONE ctermfg=Black ctermbg=Yellow gui=NONE guifg=Blue guibg=Yellow
 
 " Common groups that link to default highlighting.
 " You can specify other highlighting easily.

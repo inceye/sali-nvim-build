@@ -7,9 +7,9 @@ set hidden                              " Required to keep multiple buffers open
 set encoding=utf-8                      " The encoding displayed
 set pumheight=10                        " Makes pop-up menu smaller 
 set fileencoding=utf-8                  " The encoding written to file 
-set ruler              			        " Show the cursor position all the time 
+set ruler                               " Show the cursor position all the time 
 set cmdheight=2                         " More space for displaying messages
-set iskeyword+=-                      	" treat dash separated words as a word text object"
+set iskeyword+=-                        " treat dash separated words as a word text object"
 set mouse=a                             " Enable your mouse
 set guicursor=                          " Set cursor shape to rectangle 
 let g:airline_powerline_fonts = 1       " Enable airline arrow thingies
@@ -21,13 +21,15 @@ set conceallevel=0                      " So that I can see `` in markdown files
 set tabstop=4                           " Insert 2 spaces for a tab
 set shiftwidth=4                        " Change the number of space characters inserted for indentation
 set smarttab                            " Makes tabbing smarter will realize you have 2 vs 4
-set expandtab                           " Converts tabs to spaces           XXX: proposed removal
+set noexpandtab                         " Converts tabs to spaces           XXX: proposed removal
 set smartindent                         " Makes indenting smart
 set autoindent                          " Good auto indent
 set laststatus=0                        " Always display the status line
 set number                              " Line numbers
 set background=dark                     " tell vim what the background color looks like
 set showtabline=2                       " Always show tabs
+set list!
+set listchars=tab:>-,trail:.,extends:>,precedes:<,nbsp:.,lead:.,eol:$
 set nobackup                            " This is recommended by coc        XXX: proposed removal
 set nowritebackup                       " This is recommended by coc        XXX: proposed removal
 set updatetime=300                      " Faster completion                 XXX: proposed removal
@@ -49,56 +51,56 @@ au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm al
 autocmd BufRead *.rs :setlocal tags=./rusty-tags.vi;/,$RUST_SRC_PATH/rusty-tags.vi
 autocmd BufWritePost *.rs :silent! exec "!rusty-tags vi --quiet --start-dir=" . expand('%:p:h') . "&" | redraw!
 
-autocmd BufWritePost *.c,*.h :silent! !eval "ctags -R . /usr/include; sort -t$'\t' ./tags -o ./tags" & 
+autocmd BufWritePost *.c,*.h :silent! !eval "ctags -R . /usr/include; sort -t$'\t' ./tags -o ./tags" &
 
 " Omnicomplete
 filetype plugin on
 set omnifunc=syntaxcomplete#Complete
 
 function! OpenCompletion()
-    if pumvisible() && (g:autocompletion == v:true)
-        if g:autocomplete_type == "buffer"
-            call feedkeys("\<C-e>\<C-n>", "i")
-        endif
-        if g:autocomplete_type == "omni"
-            call feedkeys("\<C-e>\<C-x>\<C-o>", "i")
-        endif
-        return
-        redraw
-    endif
-    if ((v:char >= 'a' && v:char <= 'z') || (v:char >= 'A' && v:char <= 'Z')) && (g:autocompletion == v:true)
-        if g:autocomplete_type == "buffer"
-            call feedkeys("\<C-n>", "i")
-        endif
-        if g:autocomplete_type == "omni"
-            call feedkeys("\<C-x>\<C-o>", "i")
-        endif
-        redraw
-    endif
+	if pumvisible() && (g:autocompletion == v:true)
+		if g:autocomplete_type == "buffer"
+			call feedkeys("\<C-e>\<C-n>", "i")
+		endif
+		if g:autocomplete_type == "omni"
+			call feedkeys("\<C-e>\<C-x>\<C-o>", "i")
+		endif
+		return
+		redraw
+	endif
+	if ((v:char >= 'a' && v:char <= 'z') || (v:char >= 'A' && v:char <= 'Z')) && (g:autocompletion == v:true)
+		if g:autocomplete_type == "buffer"
+			call feedkeys("\<C-n>", "i")
+		endif
+		if g:autocomplete_type == "omni"
+			call feedkeys("\<C-x>\<C-o>", "i")
+		endif
+		redraw
+	endif
 endfunction
 
 function! ToggleAutocomplete()
-    if g:autocompletion == v:true 
-        echom "Auto-completion disabled"
-        let g:autocompletion = v:false
-    else
-        echom "Auto-completion enabled"
-        let g:autocompletion = v:true
-    endif
+	if g:autocompletion == v:true
+		echom "Auto-completion disabled"
+		let g:autocompletion = v:false
+	else
+		echom "Auto-completion enabled"
+		let g:autocompletion = v:true
+	endif
 endfunction
 
 function! ToggleCompleteType()
-    if g:autocomplete_type == "buffer" 
-        echom "Auto-completion type set to omnicomplete"
-        let g:autocomplete_type = "omni"
-        return
-    endif
-    if g:autocomplete_type == "omni" 
-        echom "Auto-completion type set to normal"
-        let g:autocomplete_type = "buffer"
-        return
-    endif
-    let g:autocomplete_type = "buffer"
+	if g:autocomplete_type == "buffer"
+		echom "Auto-completion type set to omnicomplete"
+		let g:autocomplete_type = "omni"
+		return
+	endif
+	if g:autocomplete_type == "omni"
+		echom "Auto-completion type set to normal"
+		let g:autocomplete_type = "buffer"
+		return
+	endif
+	let g:autocomplete_type = "buffer"
 endfunction
 
 autocmd InsertCharPre * noautocmd call OpenCompletion()
