@@ -29,7 +29,7 @@ set number                              " Line numbers
 set background=dark                     " tell vim what the background color looks like
 set showtabline=2                       " Always show tabs
 set list!
-set listchars=tab:>-,trail:.,extends:>,precedes:<,nbsp:.,lead:.
+set listchars=tab:>-,trail:·,extends:>,precedes:<,nbsp:·,lead:·
 set nobackup                            " This is recommended by coc        XXX: proposed removal
 set nowritebackup                       " This is recommended by coc        XXX: proposed removal
 set updatetime=300                      " Faster completion                 XXX: proposed removal
