@@ -44,6 +44,8 @@ if &background == "dark"
 	SynColor Ignore			term=NONE cterm=NONE ctermfg=black ctermbg=NONE gui=NONE guifg=bg guibg=NONE
 	SynColor Whitespace		term=NONE cterm=NONE ctermfg=DarkGray ctermbg=NONE gui=NONE guifg=#151540 guibg=NONE
 	SynColor NonText		term=NONE cterm=NONE ctermfg=Blue ctermbg=NONE gui=NONE guifg=#151540 guibg=NONE
+	SynColor VertSplit		term=NONE cterm=NONE ctermfg=DarkBlue ctermbg=237 gui=NONE guifg=#151540 guibg=#3a3a3a
+	SynColor Cursorline		term=NONE cterm=NONE ctermbg=237 gui=NONE guibg=#3a3a3a
 else
 	SynColor Comment		term=bold cterm=NONE ctermfg=DarkBlue ctermbg=NONE gui=NONE guifg=Blue guibg=NONE
 	SynColor Constant		term=underline cterm=NONE ctermfg=DarkRed ctermbg=NONE gui=NONE guifg=Magenta guibg=NONE
@@ -58,6 +60,8 @@ else
 	SynColor Ignore			term=NONE cterm=NONE ctermfg=white ctermbg=NONE gui=NONE guifg=bg guibg=NONE
 	SynColor Whitespace		term=NONE cterm=NONE ctermfg=LightGray ctermbg=NONE gui=NONE guifg=#80a0ff guibg=NONE
 	SynColor NonText		term=NONE cterm=NONE ctermfg=LightBlue ctermbg=NONE gui=NONE guifg=#80a0ff guibg=NONE
+	SynColor VertSplit		term=NONE cterm=NONE ctermfg=LightBlue ctermbg=252 gui=NONE guifg=#80a0ff guibg=#d0d0d0
+	SynColor Cursorline		term=NONE cterm=NONE ctermbg=252 gui=NONE guibg=#d0d0d0
 endif
 
 SynColor Error				term=reverse cterm=NONE ctermfg=White ctermbg=Red gui=NONE guifg=White guibg=Red

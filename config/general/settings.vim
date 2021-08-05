@@ -30,6 +30,7 @@ set background=dark                     " tell vim what the background color loo
 set showtabline=2                       " Always show tabs
 set list!
 set listchars=tab:>-,trail:·,extends:>,precedes:<,nbsp:·,lead:·
+set cursorline
 set nobackup                            " This is recommended by coc        XXX: proposed removal
 set nowritebackup                       " This is recommended by coc        XXX: proposed removal
 set updatetime=300                      " Faster completion                 XXX: proposed removal
