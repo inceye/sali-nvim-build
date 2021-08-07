@@ -29,11 +29,14 @@ nnoremap <C-s> :w<CR>
 nnoremap <C-Q> :wq!<CR>
 
 " Use control-c instead of escape
-nnoremap <C-c> <Esc>
+" A lot of those are removed because C-c already has a 
+" function a little bit different
+" from Esc that might be useful
+"nnoremap <C-c> <Esc>
 inoremap <C-c> <Esc>
-onoremap <C-c> <Esc>
-vnoremap <C-c> <Esc>
-cnoremap <C-c> <Esc>
+"onoremap <C-c> <Esc>
+"vnoremap <C-c> <Esc>
+"cnoremap <C-c> <Esc>
 
 " These options are not very good with as-you-type auto-completion, so I've
 " removed them, They kinda mess up the default vim behavior
