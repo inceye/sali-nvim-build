@@ -30,14 +30,14 @@ sudo pacman -S neovim python python-pip ctags ||
 
 log "Installing some AUR dependencies"
 paru -S rusty-tags || 
-    pacaur -S rusty-tags || 
-    yaourt -S rusty-tags || 
-    sudo cargo install --root / rusty-tags || 
-    fatal "Installing additional AUR packages"
+	pacaur -S rusty-tags || 
+	yaourt -S rusty-tags || 
+	sudo cargo install --root / rusty-tags || 
+	fatal "Installing additional AUR packages"
 
 log "Istalling python dependencies"
 pip install neovim ||
-    fatal "Installing python dependencies"
+	fatal "Installing python dependencies"
 
 log "Installing fonts"
 ( cd fonts && ./install.sh ) ||
@@ -48,6 +48,8 @@ rm -Rf ~/.config/nvim || fatal "Getting rid of old configuration"
 log "Copying new configuration"
 mkdir --parents ~/.config/nvim || fatal "Creation of .config/nvim directory"
 cp -r config/. ~/.config/nvim/ || fatal "Copying new configs"
+
+mkdir ~/.config/nvim/.vimhist/ || fatal "Creating history directory"
 
 log "Script successfully finished"
 finish

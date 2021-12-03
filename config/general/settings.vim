@@ -47,6 +47,11 @@ set completeopt+=noinsert
 let g:autocompletion = v:false
 let g:autocomplete_type = "buffer"
 
+if has('persistent_undo')
+	set undodir=$HOME/.config/nvim/.vimhist/
+	set undofile
+endif
+
 au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm alternatively you can run :source $MYVIMRC
 
 autocmd BufRead *.rs :setlocal tags=./rusty-tags.vi;/,$RUST_SRC_PATH/rusty-tags.vi
