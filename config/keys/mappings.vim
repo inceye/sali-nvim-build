@@ -89,4 +89,4 @@ nnoremap S :%s//g<Left><Left>
 map <leader>f :FakeSubstitute<CR>
 
 " Open nerd tree
-map <leader>t :NERDTree<CR>
+map <leader>t :NERDTreeToggle<CR>
