@@ -55,6 +55,12 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+" Resize windows (no good keys left, sadge)
+nnoremap <C-p> <C-w>>
+nnoremap <C-n> <C-w><
+nnoremap _ <C-w>-
+nnoremap + <C-w>+
+
 " Easy omnicomplete
 imap <leader>n <C-x><C-o>
 imap <C-b> <C-x><C-o>
