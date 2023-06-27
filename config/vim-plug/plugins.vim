@@ -59,4 +59,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'benknoble/vim-mips'
 	Plug 'vim-scripts/vim-uci'
 
+	" Smart color column
+	Plug 'Bekaboo/deadcolumn.nvim'
+
 call plug#end()

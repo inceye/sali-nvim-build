@@ -37,3 +37,5 @@ source $HOME/.config/nvim/plug-config/far.vim
 " Fake (generate gibberish)
 source $HOME/.config/nvim/plug-config/fake.vim
 source $HOME/.config/nvim/plug-config/NERDTree.vim
+
+luafile $HOME/.config/nvim/plug-config/deadcolumn.lua

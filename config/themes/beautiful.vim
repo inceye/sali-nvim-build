@@ -62,6 +62,8 @@ else
 	SynColor NonText		term=NONE cterm=NONE ctermfg=LightBlue ctermbg=NONE gui=NONE guifg=#80a0ff guibg=NONE
 	SynColor VertSplit		term=NONE cterm=NONE ctermfg=LightBlue ctermbg=252 gui=NONE guifg=#80a0ff guibg=#d0d0d0
 	SynColor Cursorline		term=NONE cterm=NONE ctermbg=252 gui=NONE guibg=#d0d0d0
+	SynColor ColumnNormal	term=NONE cterm=NONE ctermbg=252 gui=NONE guibg=#d0d0d0
+	SynColor ColumnExceed	term=NONE cterm=NONE ctermbg=LightRed gui=NONE guibg=LightRed
 endif
 
 SynColor Error				term=reverse cterm=NONE ctermfg=White ctermbg=Red gui=NONE guifg=White guibg=Red
