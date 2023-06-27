@@ -37,6 +37,7 @@ paru -S rusty-tags ||
 
 log "Istalling python dependencies"
 pip install neovim ||
+	sudo pacman -S python-pynvim ||
 	fatal "Installing python dependencies"
 
 log "Installing fonts"
