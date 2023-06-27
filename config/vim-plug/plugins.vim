@@ -57,5 +57,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Syntax highlighting for different languages
     Plug 'rust-lang/rust.vim'
     Plug 'benknoble/vim-mips'
+	Plug 'vim-scripts/vim-uci'
 
 call plug#end()
