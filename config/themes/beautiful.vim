@@ -1,29 +1,12 @@
+" Beautiful colorscheme by Andy Gozas <andy@gozas.me>
+"
+" Based on
 " Vim syntax support file
 " Maintainer:	Bram Moolenaar <Bram@vim.org>
 " Last Change:	2020 Feb 13
 
-" This file sets up the default methods for highlighting.
-" It is loaded from "synload.vim" and from Vim for ":syntax reset".
-" Also used from init_highlight().
-
-if !exists("syntax_cmd") || syntax_cmd == "on"
-	" ":syntax on" works like in Vim 5.7: set colors but keep links
-	command -nargs=* SynColor hi <args>
-	command -nargs=* SynLink hi link <args>
-else
-	if syntax_cmd == "enable"
-		" ":syntax enable" keeps any existing colors
-		command -nargs=* SynColor hi def <args>
-		command -nargs=* SynLink hi def link <args>
-	elseif syntax_cmd == "reset"
-		" ":syntax reset" resets all colors to the default
-		command -nargs=* SynColor hi <args>
-		command -nargs=* SynLink hi! link <args>
-	else
-		" User defined syncolor file has already set the colors.
-		finish
-	endif
-endif
+command -nargs=* SynColor hi <args>
+command -nargs=* SynLink hi! link <args>
 
 let g:colors_name = "beautiful"
 
@@ -46,6 +29,13 @@ if &background == "dark"
 	SynColor NonText		term=NONE cterm=NONE ctermfg=Blue ctermbg=NONE gui=NONE guifg=#151540 guibg=NONE
 	SynColor VertSplit		term=NONE cterm=NONE ctermfg=DarkBlue ctermbg=237 gui=NONE guifg=#151540 guibg=#3a3a3a
 	SynColor Cursorline		term=NONE cterm=NONE ctermbg=237 gui=NONE guibg=#3a3a3a
+	SynColor Directory		term=NONE cterm=NONE ctermfg=LightCyan
+	SynColor LineNr			term=NONE cterm=NONE ctermfg=Yellow ctermbg=NONE
+	SynColor CursorLineNr	term=bold cterm=bold ctermfg=Yellow ctermbg=NONE
+	SynColor MatchParen		term=NONE cterm=NONE ctermbg=DarkCyan
+	SynColor Pmenu			term=NONE cterm=NONE ctermbg=Magenta ctermfg=Black
+	SynColor PmenuSel		term=NONE cterm=NONE ctermbg=Black ctermfg=Gray
+	SynColor Visual			term=NONE cterm=NONE ctermbg=DarkGray ctermfg=NONE
 else
 	SynColor Comment		term=bold cterm=NONE ctermfg=DarkBlue ctermbg=NONE gui=NONE guifg=Blue guibg=NONE
 	SynColor Constant		term=underline cterm=NONE ctermfg=DarkRed ctermbg=NONE gui=NONE guifg=Magenta guibg=NONE
@@ -68,6 +58,7 @@ endif
 
 SynColor Error				term=reverse cterm=NONE ctermfg=White ctermbg=Red gui=NONE guifg=White guibg=Red
 SynColor Todo				term=standout cterm=NONE ctermfg=Black ctermbg=Yellow gui=NONE guifg=Blue guibg=Yellow
+SynColor ColorColumn		term=NONE cterm=NONE ctermbg=52 gui=NONE guibg=Red
 
 " Common groups that link to default highlighting.
 " You can specify other highlighting easily.
@@ -95,6 +86,8 @@ SynLink SpecialChar		Special
 SynLink Delimiter		Special
 SynLink SpecialComment	Special
 SynLink Debug			Special
+SynLink Title			Special
+SynLink WinSeparator	VertSplit
 
 delcommand SynColor
 delcommand SynLink
