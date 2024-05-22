@@ -46,7 +46,7 @@ set completeopt+=noselect
 set completeopt+=noinsert
 let g:autocompletion = v:false
 let g:autocomplete_type = "buffer"
-set colorcolumn=60,80,120
+set colorcolumn=60,80,100
 
 if has('persistent_undo')
 	set undodir=$HOME/.config/nvim/.vimhist/
