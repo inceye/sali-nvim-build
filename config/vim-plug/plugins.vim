@@ -59,7 +59,14 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'benknoble/vim-mips'
 	Plug 'vim-scripts/vim-uci'
 
+	" See vim undos like git branches
+	Plug 'mbbill/undotree'
+
+	" View and edit binary files in hex mode
+	" Plug 'fidian/hexmode'
+	" Plug 'RaafatTurki/hex.nvim'
+
 	" Smart color column
-	Plug 'Bekaboo/deadcolumn.nvim'
+	" Plug 'Bekaboo/deadcolumn.nvim'
 
 call plug#end()

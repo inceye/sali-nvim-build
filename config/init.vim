@@ -38,4 +38,4 @@ source $HOME/.config/nvim/plug-config/far.vim
 source $HOME/.config/nvim/plug-config/fake.vim
 source $HOME/.config/nvim/plug-config/NERDTree.vim
 
-luafile $HOME/.config/nvim/plug-config/deadcolumn.lua
+" luafile $HOME/.config/nvim/plug-config/deadcolumn.lua
