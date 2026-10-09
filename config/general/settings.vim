@@ -37,6 +37,7 @@ set updatetime=300                      " Faster completion                 XXX:
 set timeoutlen=500                      " By default timeoutlen is 1000 ms  XXX: proposed removal
 set formatoptions-=cro                  " Stop newline continution of comments
 set clipboard=unnamedplus               " Copy paste between vim and everything else
+set notermguicolors                     " Guicolors are lame, just use term defaults
 "set autochdir                          " Search for tags in parent directories recursively
 set path+=**                            " Path hack that adds all files from all sub-directories to your path
 set complete+=kspell                    " Add spelling auto-completion
@@ -111,6 +112,17 @@ function! ToggleCompleteType()
 endfunction
 
 autocmd InsertCharPre * noautocmd call OpenCompletion()
+
+function TreesitterStart()
+	" enable syntax highlight
+	lua vim.treesitter.start()
+
+	" enable folds
+	setlocal foldexpr=v:lua.vim.treesitter.foldexpr()
+	setlocal foldmethod=expr
+endfunction
+
+autocmd FileType c,cpp,go,python call TreesitterStart()
 
 " You can't stop me
 cmap w!! w !sudo tee %

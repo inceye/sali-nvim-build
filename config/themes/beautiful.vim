@@ -16,13 +16,18 @@ let g:colors_name = "beautiful"
 " Careful with "cterm=bold", it changes the color to bright for some terminals.
 " There are two sets of defaults: for a dark and a light background.
 if &background == "dark"
-	SynColor Comment		term=bold cterm=NONE ctermfg=Cyan ctermbg=NONE gui=NONE guifg=#80a0ff guibg=NONE
-	SynColor Constant		term=underline cterm=NONE ctermfg=Magenta ctermbg=NONE gui=NONE guifg=#ffa0a0 guibg=NONE
-	SynColor Special		term=bold cterm=NONE ctermfg=LightMagenta ctermbg=NONE gui=NONE guifg=Orange guibg=NONE
+	SynColor Normal		term=bold cterm=NONE ctermfg=White ctermbg=NONE gui=NONE guifg=#80a0ff guibg=NONE
+	SynColor Comment		term=bold cterm=NONE ctermfg=Gray ctermbg=NONE gui=NONE guifg=#80a0ff guibg=NONE
+	SynColor Constant		term=underline cterm=NONE ctermfg=147 ctermbg=NONE gui=NONE guifg=#ffa0a0 guibg=NONE
+	SynColor Special		term=bold cterm=NONE ctermfg=219 ctermbg=NONE gui=NONE guifg=Orange guibg=NONE
 	SynColor Identifier		term=underline cterm=bold ctermfg=Cyan ctermbg=NONE gui=NONE guifg=#40ffff guibg=NONE
+	SynColor IdentifierBuiltin		term=underline cterm=bold ctermfg=27 ctermbg=NONE gui=NONE guifg=#40ffff guibg=NONE
+	SynColor Property		term=underline cterm=NONE ctermfg=LightCyan ctermbg=NONE gui=NONE guifg=#40ffff guibg=NONE
 	SynColor Statement		term=bold cterm=NONE ctermfg=Yellow ctermbg=NONE gui=bold guifg=#ffff60 guibg=NONE
+	SynColor Ops		term=bold cterm=NONE ctermfg=Cyan ctermbg=NONE gui=bold guifg=#ffff60 guibg=NONE
 	SynColor PreProc		term=underline cterm=NONE ctermfg=Blue ctermbg=NONE gui=NONE guifg=#ff80ff guibg=NONE
-	SynColor Type			term=underline cterm=NONE ctermfg=Green ctermbg=NONE gui=bold guifg=#60ff60 guibg=NONE
+	SynColor Type			term=underline cterm=NONE ctermfg=LightGreen ctermbg=NONE gui=bold guifg=#60ff60 guibg=NONE
+	SynColor TypeBuiltin	term=NONE cterm=NONE ctermfg=Green ctermbg=NONE gui=bold guifg=#60ff60 guibg=NONE
 	SynColor Underlined		term=underline cterm=underline ctermfg=LightBlue gui=underline guifg=#80a0ff
 	SynColor Ignore			term=NONE cterm=NONE ctermfg=black ctermbg=NONE gui=NONE guifg=bg guibg=NONE
 	SynColor Whitespace		term=NONE cterm=NONE ctermfg=DarkGray ctermbg=NONE gui=NONE guifg=#151540 guibg=NONE
@@ -59,6 +64,8 @@ endif
 SynColor Error				term=reverse cterm=NONE ctermfg=White ctermbg=Red gui=NONE guifg=White guibg=Red
 SynColor Todo				term=standout cterm=NONE ctermfg=Black ctermbg=Yellow gui=NONE guifg=Blue guibg=Yellow
 SynColor ColorColumn		term=NONE cterm=NONE ctermbg=52 gui=NONE guibg=Red
+SynColor StatusLine			term=NONE cterm=NONE
+SynColor StatusLineNC		term=NONE cterm=NONE
 
 " Common groups that link to default highlighting.
 " You can specify other highlighting easily.
@@ -88,6 +95,17 @@ SynLink SpecialComment	Special
 SynLink Debug			Special
 SynLink Title			Special
 SynLink WinSeparator	VertSplit
+SynLink cStorageClass	Statement
+SynLink cStructure		Statement
+
+SynLink @type.builtin		TypeBuiltin
+SynLink @function.builtin	IdentifierBuiltin
+SynLink @keyword.directive	PreProc
+SynLink @keyword.import		PreProc
+"SynLink @property			Property
+SynLink @property			Normal
+SynLink @punctuation.delimiter	Statement
+SynLink @operator	Ops
 
 delcommand SynColor
 delcommand SynLink

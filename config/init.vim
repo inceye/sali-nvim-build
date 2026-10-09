@@ -39,3 +39,4 @@ source $HOME/.config/nvim/plug-config/fake.vim
 source $HOME/.config/nvim/plug-config/NERDTree.vim
 
 " luafile $HOME/.config/nvim/plug-config/deadcolumn.lua
+lua require('init')

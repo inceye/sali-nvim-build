@@ -61,6 +61,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
 	" See vim undos like git branches
 	Plug 'mbbill/undotree'
+	Plug 'bfrg/vim-c-cpp-modern'
 
 	" View and edit binary files in hex mode
 	" Plug 'fidian/hexmode'
@@ -68,5 +69,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
 	" Smart color column
 	" Plug 'Bekaboo/deadcolumn.nvim'
+	Plug 'nvim-treesitter/nvim-treesitter'
 
 call plug#end()
