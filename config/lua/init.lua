@@ -24,3 +24,5 @@ local config = {
   },
 }
 require("nvim-tree").setup(config)
+
+require("toggleterm").setup()

@@ -72,4 +72,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'nvim-treesitter/nvim-treesitter'
 	Plug 'nvim-tree/nvim-tree.lua'
 
+	Plug 'akinsho/toggleterm.nvim'
+
 call plug#end()
