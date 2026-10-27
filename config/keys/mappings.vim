@@ -90,4 +90,4 @@ map <leader>f :FakeSubstitute<CR>
 
 " Open nerd tree
 map <leader>t :UndotreeToggle<CR>:NvimTreeToggle<CR>
-map <leader>c :TermToggle<CR>
+map <leader>c :ToggleTerm<CR>
