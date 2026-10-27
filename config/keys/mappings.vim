@@ -89,4 +89,5 @@ nnoremap S :%s//g<Left><Left>
 map <leader>f :FakeSubstitute<CR>
 
 " Open nerd tree
-map <leader>t :NvimTreeToggle<CR>:UndotreeToggle<CR>
+map <leader>t :UndotreeToggle<CR>:NvimTreeToggle<CR>
+map <leader>c :TermToggle
