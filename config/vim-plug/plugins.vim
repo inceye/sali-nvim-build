@@ -17,7 +17,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'sheerun/vim-polyglot'
 
     " File Explorer
-    Plug 'scrooloose/NERDTree'
+    "Plug 'scrooloose/NERDTree'
 
     " Airline theme
     Plug 'vim-airline/vim-airline'
@@ -70,5 +70,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	" Smart color column
 	" Plug 'Bekaboo/deadcolumn.nvim'
 	Plug 'nvim-treesitter/nvim-treesitter'
+	Plug 'nvim-tree/nvim-tree.lua'
 
 call plug#end()
